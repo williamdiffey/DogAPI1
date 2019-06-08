@@ -1,6 +1,6 @@
 'use strict';
 
-function inputListener() {
+function eventListener() {
   $('#dog-form').on('submit', function(event) {
     $('.dog-image-results').empty();
     event.preventDefault();
@@ -11,11 +11,9 @@ function inputListener() {
 
 function getInput(dogInput) {
     if (dogInput.length === 0) {
-      
       let userInput = 3;
       pullDogImages(userInput);
-
-    } else if (dogInput > 50) {
+   } else if (dogInput > 50) {
       alert('Less than 50 dogs pictures please');
     
     } else if (dogInput < 1 ) {
@@ -46,6 +44,6 @@ function showDogs(finalPulledDogImages) {
 }
 
 $(function() {
-  inputListener();
+  eventListener();
 }
 );
